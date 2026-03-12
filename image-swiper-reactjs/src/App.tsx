@@ -2,7 +2,7 @@ import ImageSlider from "./components/ImageSlider";
 
 function App() {
   return (
-    <div className="container">
+    <div className="max-w-[800px] mx-auto px-4">
       <ImageSlider />
     </div>
   );
