@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO Metadata -->
     <title>Shopify Style Image Swiper Slider (jQuery)</title>
     <meta
       name="description"
@@ -24,7 +23,7 @@
       property="og:description"
       content="A Shopify-style image swiper slider built with jQuery and SwiperJS. Browse and interact with product images in a modern, responsive slider UI."
     />
-    <meta property="og:image" content="images/image1.png" />
+    <meta property="og:image" content="public/images/image1.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://arnob-mahmud.vercel.app/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,104 +35,129 @@
       name="twitter:description"
       content="A Shopify-style image swiper slider built with jQuery and SwiperJS. Browse and interact with product images in a modern, responsive slider UI."
     />
-    <meta name="twitter:image" content="images/image1.png" />
-    <link rel="icon" type="image/png" href="images/image1.png" />
-    <!-- End SEO Metadata -->
-    <!-- SwiperJS CSS -->
+    <meta name="twitter:image" content="public/images/image1.png" />
+    <link rel="icon" type="image/svg+xml" href="public/vite.svg" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <p class="heading">
-        Shopify Style Image Swiper Slider using jQuery and SwiperJS
-      </p>
+      <header class="header-section" role="banner">
+        <p class="heading">
+          Shopify Style Image Swiper using jQuery and Swiper.js
+        </p>
+        <div class="educational-callout" role="note">
+          <strong>Learn:</strong> This project uses <strong>jQuery</strong> (DOM
+          manipulation) and <strong>SwiperJS</strong> (touch-enabled slider). Each
+          slide has its own <code>.text-overlay</code> inside the slide, so the
+          text swipes with the image. The nav bar (arrows + dots) is built in
+          <code>script.js</code> via Swiper&apos;s <code>on.init</code> callback:
+          jQuery moves the prev/next buttons into the pagination container so they
+          appear centered together.
+        </div>
+      </header>
 
-      <!-- Swiper Slider Container -->
-      <div class="swiper">
+      <section class="swiper-section" aria-label="Image slider">
+        <div class="swiper">
         <div class="swiper-wrapper">
-          <!-- Slide 1 -->
           <div
             class="swiper-slide image-container"
             data-product-id="product1"
             onclick="redirectToProduct(this)"
           >
-            <img src="images/image1.png" alt="" />
+            <img src="public/images/image1.png" alt="" />
             <div class="text-overlay">
               <p class="subtitle">Super Solid Glass - Glanz</p>
               <p class="subsubtitle">Polierter Onyxmarmor</p>
             </div>
           </div>
-          <!-- Slide 2 -->
           <div
             class="swiper-slide image-container"
             data-product-id="product2"
             onclick="redirectToProduct(this)"
           >
-            <img src="images/image2.png" alt="" />
+            <img src="public/images/image2.png" alt="" />
             <div class="text-overlay">
               <p class="subtitle">Glass Solid - Glanz</p>
               <p class="subsubtitle">Onyxmarmor Polierter</p>
             </div>
           </div>
-          <!-- Slide 3 -->
           <div
             class="swiper-slide image-container"
             data-product-id="product3"
             onclick="redirectToProduct(this)"
           >
-            <img src="images/image3.png" alt="" />
+            <img src="public/images/image3.png" alt="" />
             <div class="text-overlay">
               <p class="subtitle">Super Artificial Stone - Glanz</p>
               <p class="subsubtitle">Sand Beige</p>
             </div>
           </div>
-          <!-- Slide 4 -->
           <div
             class="swiper-slide image-container"
             data-product-id="product4"
             onclick="redirectToProduct(this)"
           >
-            <img src="images/image4.png" alt="" />
+            <img src="public/images/image4.png" alt="" />
             <div class="text-overlay">
               <p class="subtitle">Blickfang - Glanz</p>
               <p class="subsubtitle">Window Display</p>
             </div>
           </div>
-          <!-- Slide 5 -->
           <div
             class="swiper-slide image-container"
             data-product-id="product5"
             onclick="redirectToProduct(this)"
           >
-            <img src="images/image5.png" alt="" />
+            <img src="public/images/image5.png" alt="" />
             <div class="text-overlay">
               <p class="subtitle">Comfort - Glanz</p>
               <p class="subsubtitle">Smooth Surface</p>
             </div>
           </div>
         </div>
-        <!-- Swiper Navigation and Pagination -->
         <div class="swiper-navigation-pagination-container">
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-next"></div>
+          <div class="nav-bar-product-text-wrapper" aria-live="polite">
+            <div class="nav-bar-text-slider">
+              <div class="nav-bar-text-slide">
+                <p class="nav-subtitle">Super Solid Glass - Glanz</p>
+                <p class="nav-subsubtitle">Polierter Onyxmarmor</p>
+              </div>
+              <div class="nav-bar-text-slide">
+                <p class="nav-subtitle">Glass Solid - Glanz</p>
+                <p class="nav-subsubtitle">Onyxmarmor Polierter</p>
+              </div>
+              <div class="nav-bar-text-slide">
+                <p class="nav-subtitle">Super Artificial Stone - Glanz</p>
+                <p class="nav-subsubtitle">Sand Beige</p>
+              </div>
+              <div class="nav-bar-text-slide">
+                <p class="nav-subtitle">Blickfang - Glanz</p>
+                <p class="nav-subsubtitle">Window Display</p>
+              </div>
+              <div class="nav-bar-text-slide">
+                <p class="nav-subtitle">Comfort - Glanz</p>
+                <p class="nav-subsubtitle">Smooth Surface</p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-bar-controls">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
       </div>
+      </section>
     </div>
 
-    <!-- jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- SwiperJS Library -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
     <script>
-      // Function to update the URL hash instead of redirecting
       function redirectToProduct(element) {
         const productId = element.getAttribute("data-product-id");
         window.location.hash = productId;

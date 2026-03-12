@@ -1,0 +1,17 @@
+{
+  "name": "image-swiper-jquery",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "serve . -l 3000",
+    "lint": "eslint . --ext .js",
+    "preview": "serve . -l 3000"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "serve": "^14.2.4"
+  }
+}

@@ -1,14 +1,6 @@
-# Shopify Style Image Swiper Slider - jQuery, SwiperJS Project Tutorial
+# Shopify Style Image Swiper - JavaScript, jQuery, Swiper.js, Custom CSS Project Tutorial Fundamental Project 10
 
-![Screenshot 2025-08-29 at 23 20 24](https://github.com/user-attachments/assets/50f1080f-9b35-4e29-bb04-2196230ad271)
-
----
-
-## Project Overview
-
-A modern, responsive image swiper slider inspired by Shopify, built using jQuery and SwiperJS. This project demonstrates how to create a sleek, interactive product gallery with smooth navigation, pagination, and custom styling. Perfect for e-commerce, portfolios, or any site needing a beautiful image slider.
-
-- **jQuery Swiper Live-Demo:** [https://image-slider-jquery-swiperjs.netlify.app/](https://image-slider-jquery-swiperjs.netlify.app/)
+- **jQuery Swiper Live Demo:** []()
 
 ---
 
@@ -27,15 +19,15 @@ A modern, responsive image swiper slider inspired by Shopify, built using jQuery
 
 ```bash
 image-swiper-jquery/
-├── images/           # Product images for the slider
-│   ├── image1.png
-│   ├── image2.png
-│   ├── image3.png
-│   ├── image4.png
-│   └── image5.png
+├── public/
+│   ├── images/       # Product images for the slider
+│   │   ├── image1.png
+│   │   └── ...
+│   └── vite.svg      # Favicon
 ├── index.html        # Main HTML file (entry point)
 ├── script.js         # jQuery and SwiperJS logic
 ├── styles.css        # Custom styles for the slider
+├── package.json      # Scripts: dev, lint, preview
 └── README.md         # Project documentation
 ```
 
@@ -51,6 +43,18 @@ image-swiper-jquery/
 ---
 
 ## Quick Start
+
+### Option A: Run on localhost (recommended)
+
+1. **Install dependencies:**  
+   `npm install`
+2. **Start the dev server:**  
+   `npm run dev`  
+   This serves the project at **http://localhost:3000**
+3. **Lint:**  
+   `npm run lint`
+
+### Option B: Open in browser
 
 1. **Clone or Download** this repository.
 2. **Open `index.html`** directly in your browser. No build step required!

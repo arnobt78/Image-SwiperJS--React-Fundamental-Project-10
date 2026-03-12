@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node"
+  },
+  "include": ["script.js", "globals.d.ts"]
+}

@@ -1,36 +1,83 @@
-/* Page centered on both axes */
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    @apply w-full min-h-screen m-0 p-0 antialiased;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      avenir next,
+      avenir,
+      segoe ui,
+      helvetica neue,
+      helvetica,
+      Cantarell,
+      Ubuntu,
+      roboto,
+      noto,
+      arial,
+      sans-serif;
+  }
+  #root {
+    @apply w-full;
+  }
 }
 
-/* Swiper layout: image area + gap-1 + nav bar below */
-.swiper {
+/* Container: same as jQuery */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* Outer flex: image swiper + gap + nav bar (same as jQuery .swiper) */
+.swiper-and-nav {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* gap-1: less gap between image and bottom slider div */
+  gap: 4px;
 }
 
-.swiper-wrapper {
+/* Give Swiper root explicit size so slides don't collapse after init (stops image flash-then-disappear) */
+.swiper-and-nav > .swiper {
   flex-shrink: 0;
+  width: 100%;
   height: 400px;
 }
 
-/* Nav bar: text on left, arrows + dots centered (Shopify style) */
+.swiper-and-nav .swiper .swiper-wrapper {
+  height: 400px;
+}
+
+.swiper-and-nav .swiper .swiper-slide {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.swiper-and-nav .swiper .swiper-slide .image-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Nav bar – increased height (py), text and controls horizontally aligned */
 .swiper-navigation-pagination-container {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 16px 20px;
+  padding: 28px 24px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  min-height: 56px;
+  min-height: 88px;
+  box-sizing: border-box;
 }
 
-/* Full-width sliding text strip (syncs with image swiper, slides left–right across entire bar) */
 .nav-bar-product-text-wrapper {
   position: absolute;
   left: 0;
@@ -57,36 +104,35 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 80px;
-  padding-left: 20px;
+  padding: 0 96px 0 24px;
   box-sizing: border-box;
 }
 
 .nav-bar-text-slide .nav-subtitle {
-  margin: 0 0 4px;
+  margin: 0;
   font-size: 1rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .nav-bar-text-slide .nav-subsubtitle {
   margin: 0;
   font-size: 0.8rem;
   opacity: 0.9;
+  line-height: 1.2;
 }
 
-/* Arrows + dots in the middle of the nav bar (above the text strip) */
 .nav-bar-controls {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   z-index: 1;
   pointer-events: auto;
 }
 
-/* Override Swiper's absolute positioning so pagination stays in flow */
 .swiper-pagination {
   position: static !important;
   transform: none !important;
@@ -107,7 +153,6 @@ body {
   color: #7dd3fc;
 }
 
-/* Swiper pagination bullet styling */
 .swiper-pagination-bullet {
   background-color: rgba(255, 255, 255, 0.5);
 }
@@ -116,24 +161,22 @@ body {
   background-color: #3b82f6;
 }
 
-/* Header section: independent layout block */
+/* Header section */
 .header-section {
   position: relative;
   margin-bottom: 20px;
 }
 
-/* Heading styling */
 .heading {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #000000;
+  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Educational callout for beginner learners */
 .educational-callout {
   position: relative;
   margin-bottom: 0;
@@ -145,9 +188,11 @@ body {
   line-height: 1.5;
   color: #0c4a6e;
 }
+
 .educational-callout strong {
   color: #0369a1;
 }
+
 .educational-callout code {
   background-color: #bae6fd;
   padding: 2px 6px;
@@ -155,29 +200,26 @@ body {
   font-size: 0.85em;
 }
 
-/* Swiper section: independent layout block, displays just below header */
 .swiper-section {
   position: relative;
   margin-top: 20px;
 }
 
-/* Subtitle styling */
+/* Slide content: same as jQuery */
 .subtitle {
-  margin: 20px 20px 0px;
-  font-size: 1rem;
-  text-align: left;
-  line-height: 1.5;
-}
-
-/* Subsubtitle styling */
-.subsubtitle {
-  margin: 0px 20px 20px;
+  margin: 20px 20px 0;
   font-size: 0.8rem;
   text-align: left;
   line-height: 1.5;
 }
 
-/* Image container: fixed min-height for consistent layout across all slides */
+.subsubtitle {
+  margin: 0 20px 20px;
+  font-size: 0.8rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
 .image-container {
   min-height: 400px;
   height: 400px;
@@ -188,54 +230,27 @@ body {
   overflow: hidden;
 }
 
-/* Image styling: fill container uniformly regardless of source aspect ratio */
-.image-container img {
+.image-container img,
+.slide-image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Text overlay: hidden on image; same content shown in nav bar next to arrows/dots */
 .text-overlay {
   position: absolute;
   bottom: 30px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 0px;
-  visibility: hidden; /* text displayed in nav bar instead */
+  padding: 0;
+  visibility: hidden;
 }
 
-/* HTML element styling */
-html {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    avenir next,
-    avenir,
-    segoe ui,
-    helvetica neue,
-    helvetica,
-    Cantarell,
-    Ubuntu,
-    roboto,
-    noto,
-    arial,
-    sans-serif;
-}
-
-/* Container styling */
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 0 16px;
-}
-
-/* CSS variables for Swiper */
 :root {
   --swiper-pagination-bullet-size: 20px;
   --swiper-navigation-size: 28px;
-  --swiper-pagination-bottom: 50px;
   --swiper-theme-color: #fff;
   --swiper-pagination-bullet-inactive-color: #fff;
   --swiper-pagination-bullet-inactive-opacity: 0.3;
