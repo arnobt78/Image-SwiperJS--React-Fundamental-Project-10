@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "serve . -l 3000",
+    "build": "echo 'Static site - no build step'",
+    "vercel-build": "echo 'Static site - no build step'",
     "lint": "eslint . --ext .js",
     "preview": "serve . -l 3000"
   },

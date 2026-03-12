@@ -4,11 +4,11 @@ This repository contains two educational projects that demonstrate how to build 
 
 - **image-swiper-jquery**: A static HTML/CSS/JS project using jQuery and SwiperJS.
 
-- **jQuery Swiper Live Demo:** []()
+- **jQuery Swiper Live Demo:** [https://image-swiperjs-jquery.vercel.app/](https://image-swiperjs-jquery.vercel.app/)
 
 - **image-swiper-reactjs**: A modern React app using SwiperJS, React Router, and Vite.
 
-- **React Swiper Live Demo:** []()
+- **React Swiper Live Demo:** [https://image-swiperjs-react.vercel.app/](https://image-swiperjs-react.vercel.app/)
 
 Both projects are designed for learning, teaching, and easy integration into your own web projects.
 

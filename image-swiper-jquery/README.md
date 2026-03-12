@@ -1,6 +1,6 @@
 # Shopify Style Image Swiper - JavaScript, jQuery, Swiper.js, Custom CSS Project Tutorial Fundamental Project 10
 
-- **jQuery Swiper Live Demo:** []()
+- **jQuery Swiper Live Demo:** [https://image-swiperjs-jquery.vercel.app/](https://image-swiperjs-jquery.vercel.app/)
 
 ---
 
@@ -50,7 +50,7 @@ image-swiper-jquery/
    `npm install`
 2. **Start the dev server:**  
    `npm run dev`  
-   This serves the project at **http://localhost:3000**
+   This serves the project at **<http://localhost:3000>**
 3. **Lint:**  
    `npm run lint`
 
