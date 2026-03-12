@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ========== Base: full viewport, centered layout, font stack ========== */
 @layer base {
   html,
   body {
@@ -31,6 +32,7 @@
   }
 }
 
+/* ========== Swiper: fixed height and overrides so nav bar layout works ========== */
 /* Swiper library DOM – we can't add classes to these from TSX */
 .swiper .swiper-wrapper {
   height: 400px;
@@ -41,6 +43,7 @@
   box-sizing: border-box;
 }
 
+/* Override Swiper default absolute positioning so pagination/arrows sit in our nav bar */
 .swiper-pagination {
   position: static !important;
   transform: none !important;
@@ -69,6 +72,7 @@
   background-color: #3b82f6;
 }
 
+/* Swiper theme: bullet size, nav arrow size, colors */
 :root {
   --swiper-pagination-bullet-size: 20px;
   --swiper-navigation-size: 28px;

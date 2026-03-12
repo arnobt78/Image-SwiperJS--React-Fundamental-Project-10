@@ -1,3 +1,7 @@
+/**
+ * ESLint flat config: TypeScript + React + React Hooks + React Refresh.
+ * Lints .ts and .tsx; ignores dist and config files.
+ */
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";

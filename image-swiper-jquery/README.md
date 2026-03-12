@@ -34,7 +34,7 @@ This repo contains a **static, client-side only** image slider. Each slide shows
 
 ## Project structure
 
-```text
+```bash
 image-swiper-jquery/
 ├── public/
 │   ├── images/           # Product images (image1.png … image5.png)
