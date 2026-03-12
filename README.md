@@ -12,7 +12,8 @@ This repository contains two educational projects that demonstrate how to build 
 
 Both projects are designed for learning, teaching, and easy integration into your own web projects.
 
-<img width="1274" height="890" alt="Screenshot 2026-03-12 at 15 17 05" src="https://github.com/user-attachments/assets/599ca088-2622-4ede-8943-dd24b31df04d" /> <img width="1222" height="847" alt="Screenshot 2026-03-12 at 15 17 29" src="https://github.com/user-attachments/assets/f9fb0390-4a41-4a43-b501-cee5d805504b" />
+![Screenshot 2026-03-12 at 15 17 05](https://github.com/user-attachments/assets/599ca088-2622-4ede-8943-dd24b31df04d)
+![Screenshot 2026-03-12 at 15 17 29](https://github.com/user-attachments/assets/f9fb0390-4a41-4a43-b501-cee5d805504b)
 
 ## Features
 

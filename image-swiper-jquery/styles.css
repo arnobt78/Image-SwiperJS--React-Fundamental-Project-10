@@ -1,3 +1,4 @@
+/* ========== Layout: page centered on viewport (no backend; single static page) ========== */
 /* Page centered on both axes */
 body {
   min-height: 100vh;
@@ -7,6 +8,7 @@ body {
   margin: 0;
 }
 
+/* ========== Swiper component: image area + small gap + nav bar ========== */
 /* Swiper layout: image area + gap-1 + nav bar below */
 .swiper {
   display: flex;
@@ -14,11 +16,13 @@ body {
   gap: 4px; /* gap-1: less gap between image and bottom slider div */
 }
 
+/* Wrapper for slides; fixed height so all images sit in same-sized box */
 .swiper-wrapper {
   flex-shrink: 0;
   height: 400px;
 }
 
+/* ========== Nav bar: sliding product text + centered arrows/dots (Shopify style) ========== */
 /* Nav bar: text on left, arrows + dots centered (Shopify style) */
 .swiper-navigation-pagination-container {
   position: relative;
@@ -30,6 +34,7 @@ body {
   min-height: 56px;
 }
 
+/* Strip of 5 text cells; script.js sets transform so active slide’s text is visible */
 /* Full-width sliding text strip (syncs with image swiper, slides left–right across entire bar) */
 .nav-bar-product-text-wrapper {
   position: absolute;
@@ -42,6 +47,7 @@ body {
   z-index: 0;
 }
 
+/* 500% = 5 slides × 100%; each child is 20% (see .nav-bar-text-slide) */
 .nav-bar-text-slider {
   display: flex;
   width: 500%;
@@ -86,6 +92,7 @@ body {
   pointer-events: auto;
 }
 
+/* ========== Swiper UI overrides: keep pagination/arrows in nav bar flow (not absolute) ========== */
 /* Override Swiper's absolute positioning so pagination stays in flow */
 .swiper-pagination {
   position: static !important;
@@ -116,6 +123,7 @@ body {
   background-color: #3b82f6;
 }
 
+/* ========== Header: title + educational callout ========== */
 /* Header section: independent layout block */
 .header-section {
   position: relative;
@@ -155,12 +163,14 @@ body {
   font-size: 0.85em;
 }
 
+/* ========== Swiper section container ========== */
 /* Swiper section: independent layout block, displays just below header */
 .swiper-section {
   position: relative;
   margin-top: 20px;
 }
 
+/* ========== Slide content: subtitle/subsubtitle (used in .text-overlay; overlay hidden, text in nav bar) ========== */
 /* Subtitle styling */
 .subtitle {
   margin: 20px 20px 0px;
@@ -177,6 +187,7 @@ body {
   line-height: 1.5;
 }
 
+/* ========== Image container: fixed height, object-fit so no layout shift ========== */
 /* Image container: fixed min-height for consistent layout across all slides */
 .image-container {
   min-height: 400px;
@@ -206,6 +217,7 @@ body {
   visibility: hidden; /* text displayed in nav bar instead */
 }
 
+/* ========== Base typography and container ========== */
 /* HTML element styling */
 html {
   font-family:
@@ -231,6 +243,7 @@ html {
   padding: 0 16px;
 }
 
+/* ========== Swiper theme variables (bullet size, nav size, colors) ========== */
 /* CSS variables for Swiper */
 :root {
   --swiper-pagination-bullet-size: 20px;

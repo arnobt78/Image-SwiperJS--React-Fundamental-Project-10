@@ -1,3 +1,7 @@
+/**
+ * ESLint flat config for this project.
+ * Lints .js files only; jQuery and Swiper are globals (loaded via script tags in index.html).
+ */
 import js from "@eslint/js";
 import globals from "globals";
 

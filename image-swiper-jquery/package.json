@@ -7,7 +7,7 @@
     "dev": "serve . -l 3000",
     "build": "node scripts/copy-static.mjs",
     "vercel-build": "node scripts/copy-static.mjs",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint .",
     "preview": "serve . -l 3000"
   },
   "devDependencies": {

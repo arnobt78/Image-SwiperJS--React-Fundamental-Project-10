@@ -1,50 +1,62 @@
 <!doctype html>
+<!--
+  Single-page app: Shopify-style image swiper.
+  No backend or API; all logic is client-side (jQuery + Swiper.js).
+-->
 <html lang="en">
   <head>
+    <!-- SEO & metadata: title, description, author, canonical URL, Open Graph, Twitter Card -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopify Style Image Swiper Slider (jQuery)</title>
+    <title>Shopify Style Image Swiper – jQuery &amp; Swiper.js | Arnob Mahmud</title>
     <meta
       name="description"
-      content="A Shopify-style image swiper slider built with jQuery and SwiperJS. Browse and interact with product images in a modern, responsive slider UI."
+      content="A Shopify-style image swiper slider built with JavaScript, jQuery and SwiperJS. Responsive product image gallery with navigation, pagination and sliding text. Live demo and tutorial project by Arnob Mahmud."
     />
     <meta name="author" content="Arnob Mahmud" />
-    <meta name="contact" content="arnob_t78@yahoo.com" />
-    <meta name="url" content="https://arnob-mahmud.vercel.app/" />
+    <link rel="author" href="https://www.arnobmahmud.com" />
+    <meta name="contact" content="contact@arnobmahmud.com" />
+    <link rel="canonical" href="https://image-swiperjs-jquery.vercel.app/" />
     <meta
       name="keywords"
-      content="Shopify, Swiper, Slider, jQuery, Image Slider, Product Gallery, Responsive, E-commerce, Arnob Mahmud"
+      content="Shopify, Swiper, Slider, jQuery, Image Slider, Product Gallery, Responsive, E-commerce, Arnob Mahmud, Frontend, Static Site, Web Components, SwiperJS, JavaScript"
     />
     <meta
       property="og:title"
-      content="Shopify Style Image Swiper Slider (jQuery)"
+      content="Shopify Style Image Swiper – jQuery &amp; Swiper.js | Arnob Mahmud"
     />
     <meta
       property="og:description"
-      content="A Shopify-style image swiper slider built with jQuery and SwiperJS. Browse and interact with product images in a modern, responsive slider UI."
+      content="A Shopify-style image swiper slider built with JavaScript, jQuery and SwiperJS. Responsive product image gallery with navigation and sliding text. Live demo by Arnob Mahmud."
     />
-    <meta property="og:image" content="public/images/image1.png" />
+    <meta property="og:image" content="https://image-swiperjs-jquery.vercel.app/public/images/image1.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://arnob-mahmud.vercel.app/" />
+    <meta property="og:url" content="https://image-swiperjs-jquery.vercel.app/" />
+    <meta property="og:site_name" content="Shopify Style Image Swiper (jQuery)" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Shopify Style Image Swiper Slider (jQuery)"
+      content="Shopify Style Image Swiper – jQuery &amp; Swiper.js | Arnob Mahmud"
     />
     <meta
       name="twitter:description"
-      content="A Shopify-style image swiper slider built with jQuery and SwiperJS. Browse and interact with product images in a modern, responsive slider UI."
+      content="A Shopify-style image swiper slider built with JavaScript, jQuery and SwiperJS. Responsive product image gallery. Live demo by Arnob Mahmud."
     />
-    <meta name="twitter:image" content="public/images/image1.png" />
+    <meta name="twitter:image" content="https://image-swiperjs-jquery.vercel.app/public/images/image1.png" />
+    <meta name="twitter:creator" content="@ArnobMahmud" />
     <link rel="icon" type="image/svg+xml" href="public/vite.svg" />
+    <!-- Swiper library styles (required for slider layout and default UI) -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <!-- Project-specific layout, nav bar, and overrides -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Main wrapper: max-width 800px, centered; holds header + swiper section -->
     <div class="container">
+      <!-- Header: page title + educational callout for learners -->
       <header class="header-section" role="banner">
         <p class="heading">
           Shopify Style Image Swiper using jQuery and Swiper.js
@@ -60,9 +72,12 @@
         </div>
       </header>
 
+      <!-- Swiper section: image slider + nav bar (arrows, dots, sliding product text) -->
       <section class="swiper-section" aria-label="Image slider">
         <div class="swiper">
+        <!-- Swiper expects .swiper-wrapper with .swiper-slide children -->
         <div class="swiper-wrapper">
+          <!-- Each slide: image + optional .text-overlay (hidden here; text shown in nav bar) -->
           <div
             class="swiper-slide image-container"
             data-product-id="product1"
@@ -119,7 +134,9 @@
             </div>
           </div>
         </div>
+        <!-- Nav bar below image: sliding product text + prev/dots/next (centered). Not part of Swiper’s DOM; we wire it in script.js -->
         <div class="swiper-navigation-pagination-container">
+          <!-- Full-width strip of 5 text cells; script.js syncs transform with active slide index -->
           <div class="nav-bar-product-text-wrapper" aria-live="polite">
             <div class="nav-bar-text-slider">
               <div class="nav-bar-text-slide">
@@ -144,6 +161,7 @@
               </div>
             </div>
           </div>
+          <!-- Prev, pagination dots, next: Swiper binds to these class names; script.js moves them into one row -->
           <div class="nav-bar-controls">
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
@@ -154,9 +172,11 @@
       </section>
     </div>
 
+    <!-- Load order: jQuery first, then Swiper (uses DOM), then our script and inline handler -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <!-- Inline: slide click sets window.location.hash to data-product-id (e.g. for client-side routing) -->
     <script>
       function redirectToProduct(element) {
         const productId = element.getAttribute("data-product-id");

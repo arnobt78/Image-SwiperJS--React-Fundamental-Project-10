@@ -2,6 +2,8 @@
 
 - **React Swiper Live Demo:** [https://image-swiperjs-react.vercel.app/](https://image-swiperjs-react.vercel.app/)
 
+![Screenshot 2026-03-12 at 15 17 05](https://github.com/user-attachments/assets/599ca088-2622-4ede-8943-dd24b31df04d)
+
 ## Features
 
 - Responsive, mobile-friendly design
