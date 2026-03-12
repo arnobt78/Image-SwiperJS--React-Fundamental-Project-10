@@ -79,7 +79,7 @@ function ImageSlider() {
                 ))}
               </div>
             </div>
-            <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 z-10 pointer-events-auto nav-bar-controls">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4 z-10 pointer-events-auto nav-bar-controls">
               <div className="swiper-button-prev" />
               <div className="swiper-pagination" />
               <div className="swiper-button-next" />
